@@ -1,20 +1,52 @@
 const previousOperationText = document.querySelector("#p_operation")
 const currentOperationText = document.querySelector("#c_operation")
 const buttons = document.querySelectorAll("#btn_container button")
-console.log(buttons);
+console.log(buttons)
 
 //Usamos constantes para declarar numeros pre-existentes, como observado nas teclas da calculadora. esse nome grande é o nome da nossa constante e nao uma propriedade js!
 
 class calculator {
+    constructor(previousOperationText, currentOperationText){
+        this.previousOperationText = previousOperationText
+        this.currentOperationText = currentOperationText
+        this.currentOperation = "" //o que o usuario digita na hora
+    }
+
+     //nesse caso, o constructor junto com o this, inicializam valores passados à classe calculator para criar instancias  
+    
+    //adiciona valores
+    addDigit(digit){
+        //ERROS: observa se operação ja possui um ponto de casa decimal;
+        if(digit === "." && this.currentOperationText.innerText.includes(".")){
+            return
+        }
+        
+        this.currentOperation = digit
+        this.updateScreen()
+    }
+
+    //muda os valores da tela
+    updateScreen(){
+        this.currentOperationText.innerText +=this.currentOperation
+    }
+    //updateScreen atualiza a tela conforme os valores informados, ou seja, mostra na interface
+    //colocamos o numero da nossa operação atual dentro da variavel operação atual com a concatenação de valores +=
 
 }
+
+//mudamos o currentoperation para digit, pois, a operaçao atual sera definida quando for digitado algo, ou seja, o digito
+
+
+const calc = new calculator(previousOperationText, currentOperationText) 
+//nesse caso, criamos um objeto que sera usado pela nossa classe que possui 2 parametros informados no constructor o previous e o current
+
 
 buttons.forEach((btn) => {
     btn.addEventListener("click" ,(e) => {
         const value = e.target.innerText;
         
         if(+value >= 0 || value === "."){
-            console.log(value) //se o valor clicado nas teclas for um numero maior do que 0 (ele tambem ja é convertido para numer por conta do sinal + e, se for numero com ponto(decimal), mostramos o seu valor.)
+            calc.addDigit(value) //se o valor clicado nas teclas for um numero maior do que 0 (ele tambem ja é convertido para numer por conta do sinal + e, se for numero com ponto(decimal), mostramos o seu valor.)
         } else{
             console.log("Op: " + value)
             //se nao conseguirmos mostrar a operação acima, mostramos a mensagem "Op:" + value
