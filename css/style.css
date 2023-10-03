@@ -6,82 +6,76 @@
 }
 
 body{
-    background-color: #333;
+    background-color: #b2795b; 
+}
+
+.container{
+    display: block;
+    margin: 50px auto;
+    width: 500px;
+    height: 750px;
+    background-color: #ebd5c0;
+    border-radius: 10px;
+    box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.274);
+}
+
+.output_container{
+    display: block;
+    background-color: #fceddf;
+    border-radius: 10px 10px 0px 0px;
+    width: 500px;
+    height: 190px;
+}
+
+.output_container .p_operand{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
+    justify-content: left;
+    font-size: 25px;
+    padding: 20px;
 }
-
-#calc{
-    min-width: 400px;
-    padding: 0.5em;
-    background-color: #c4c4c4;
-    color: black;
+.output_container .c_operand{
     display: flex;
-    flex-direction: column;
+    justify-content: right;
+    font-size: 80px;
+    padding: 20px;
 }
 
-#calc h3{
-    font-size: .8em;
-    font-weight: bold;
-    color: #3e3e3e;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    padding: 0.5em;
-}
-
-#operations{
-    text-align: right;
-}
-
-#p_operation{
-    color: #777;
-    padding: .0.2em;
-    overflow-wrap: break-word;
-    min-height: 1.6em;
-}
-
-#c_operation{
-    min-height: 1.6em;
-    font-size: 3em;
-    font-weight: bolder;
-    padding: .2em;
-    overflow-wrap: break-word;
-}
-
-#btn_container{
+.grid_container{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(5,1fr);
-    gap: 3px;
-
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 90px);
+    row-gap: 6px;
+    column-gap: 10px;
+    margin: 40px 20px 40px 20px;
 }
 
-#btn_container button{
-    border: 1px solid transparent;
-    border-radius: 0;
-    height: 4em;
-    font-size: 1.2em;
-    background-color: #dbdbdb;
-    cursor: pointer;
+.grid_container .operator{
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: #96643E;
+    color: white;
+    font-size: 25px;
 }
 
-#btn_container button:hover{
-    background-color: #77777786;
-    border-color: #999;
+.grid_container .operator:hover{
+    background-color: #ab896f;
 }
 
-#btn_container .number{
-    background-color: #f3f3f3;
+.grid_container button{
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: #C48351;
+    color: white;
+    font-size: 25px;
 }
 
-#btn_container #equal_btn{
+.grid_container button:hover{
+    background-color: #d3a079;
+}
+
+.grid_container .operator_equal{
+    grid-area: span 2;
+}
+.grid_container .operator_point{
     grid-column: span 2;
-    background-color:  #8dbae0;
-}
-
-#btn_container #equal_btn:hover{
-    grid-column: span 2;
-    background-color: #75a5cb;
 }
