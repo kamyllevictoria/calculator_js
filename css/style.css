@@ -73,9 +73,9 @@ body{
     background-color: #d3a079;
 }
 
-.grid_container .operator_equal{
+.grid_container .equal{
     grid-area: span 2;
 }
-.grid_container .operator_point{
+.grid_container .point{
     grid-column: span 2;
 }
