@@ -138,7 +138,7 @@ equalBtn.addEventListener('click', () =>{
     calculator.updateDisplay();
 })
 
-deleteBtn.addEventListener('click' , () =>{
+clearBtn.addEventListener('click' , () =>{
     calculator.delete();
-    calculate.updateDisplay();
+    calculator.updateDisplay();
 })
