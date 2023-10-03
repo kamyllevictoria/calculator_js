@@ -24,11 +24,10 @@ body{
     background-color: #fceddf;
     border-radius: 10px 10px 0px 0px;
     max-width: 500px;
-    min-height: 190px;
+    min-height: 150px;
     max-height: auto;
     word-break: break-all;
     word-wrap: break-word;
-
 }
 
 .output_container .p_operand{
